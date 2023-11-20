@@ -1,0 +1,1 @@
+# makao_rental_management
