@@ -37,7 +37,7 @@ if (isset($_SESSION['user_email'])) {
 
 <body>
     <?php include 'navbar.php'; ?>
-    
+
     <div class="container-fluid mt-3">
         <h2>Welcome to the Admin Dashboard</h2>
         <p>Hello, <?php echo ($username); ?>!</p>
@@ -67,7 +67,7 @@ if (isset($_SESSION['user_email'])) {
                     <div class="card-body">
                         <h4 class="card-title">Feedback</h4>
                         <p class="card-text">View feedback from tenants.</p>
-                        <a href="#" class="btn btn-primary">Go to Feedback</a>
+                        <a href="view_feedback.php" class="btn btn-primary">Go to Feedback</a>
                     </div>
                 </div>
             </div>

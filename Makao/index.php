@@ -24,6 +24,8 @@
 </head>
 
 <body>
+
+    <?php include 'navbar.php'; ?>
     <main>
         <h2>Login To Makao </h2>
         <form id="login" action="login.php" method="post">

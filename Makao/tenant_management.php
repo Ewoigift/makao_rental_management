@@ -83,7 +83,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'edit') {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="add_tenant.css">
+    <link rel="stylesheet" href="assets\add_tenant.css">
 </head>
 
 <body>
@@ -93,7 +93,6 @@ if (isset($_GET['action']) && $_GET['action'] == 'edit') {
     <div class="container">
         <h2>Tenant Management</h2>
 
-        <!-- Add/Edit Tenant Form -->
         <!-- Add/Edit Tenant Form -->
         <form action="tenant_management.php" method="post">
             <input type="hidden" name="tenant_id" value="<?php echo isset($tenantId) ? $tenantId : ''; ?>">
@@ -130,7 +129,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'edit') {
         <table class="table">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <!-- <th>ID</th> -->
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
@@ -143,7 +142,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'edit') {
                 $result = mysqli_query($conn, "SELECT * FROM tenants");
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "<tr>
-                            <td>{$row['TenantID']}</td>
+                            <!-- <td>{$row['TenantID']}</td> -->
                             <td>{$row['FirstName']}</td>
                             <td>{$row['LastName']}</td>
                             <td>{$row['Email']}</td>
