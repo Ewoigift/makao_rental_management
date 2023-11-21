@@ -34,7 +34,9 @@
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
             <br>
-            <input type="submit" value="Login" name="login">
+            <br>
+            <a href="dashboard.php"><input type="submit" value="Login" name="login"></a>
+
         </form>
     </main>
 

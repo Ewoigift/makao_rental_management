@@ -1,10 +1,5 @@
 <?php
-// session_start();
 
-// if (!isset($_SESSION['user_email'])) {
-//     header('Location: index.php');
-//     exit();
-// }
 
 session_start();
 require_once 'config.php';
@@ -24,12 +19,6 @@ if (isset($_SESSION['user_email'])) {
     // $role = $row[0]['FirstName'];
 }
 
-// Fetch user data from the database based on the user's email
-// $userEmail = $_SESSION['user_email'];
-// $stmt = $conn->prepare("SELECT * FROM users WHERE email = :email");
-// $stmt->bindParam(':email', $userEmail);
-// $stmt->execute();
-// $user = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -43,32 +32,12 @@ if (isset($_SESSION['user_email'])) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="assets\dashboard.css">
+    <link rel="stylesheet" href="assets\add_tenant.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <a class="navbar-brand" href="#">Admin Dashboard</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Tenants</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Properties</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Feedback</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="logout.php">Logout</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <?php include 'navbar.php'; ?>
+    
     <div class="container-fluid mt-3">
         <h2>Welcome to the Admin Dashboard</h2>
         <p>Hello, <?php echo ($username); ?>!</p>
@@ -79,7 +48,7 @@ if (isset($_SESSION['user_email'])) {
                     <div class="card-body">
                         <h4 class="card-title">Tenants</h4>
                         <p class="card-text">Add, edit, or delete tenants.</p>
-                        <a href="#" class="btn btn-primary">Go to Tenants</a>
+                        <a href="tenant_management.php" class="btn btn-primary">Go to Tenants</a>
                     </div>
                 </div>
             </div>
@@ -88,7 +57,8 @@ if (isset($_SESSION['user_email'])) {
                     <div class="card-body">
                         <h4 class="card-title">Properties</h4>
                         <p class="card-text">Add, edit, or delete properties.</p>
-                        <a href="#" class="btn btn-primary">Go to Properties</a>
+                        <a href="manage_properties.php" class="btn btn-primary">Go to Properties</a>
+
                     </div>
                 </div>
             </div>
@@ -103,6 +73,11 @@ if (isset($_SESSION['user_email'])) {
             </div>
         </div>
     </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

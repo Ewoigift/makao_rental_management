@@ -20,6 +20,7 @@ if (isset($_POST['login'])) {
         if ($authenticated) {
             session_start();
             $_SESSION['user_email'] = $email;
+            $_SESSION['landlord_id'] = $row[0]['LandlordID'];
             header("Location: dashboard.php");
         } else {
             $error = "Invalid email or password";
